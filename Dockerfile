@@ -1,4 +1,4 @@
-FROM ubuntu:focal as builder
+FROM ubuntu:20.04 as builder
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && \
@@ -12,7 +12,7 @@ RUN cd /tmp/build && \
     unzip "terraform_1.0.0_linux_amd64.zip" && \
     chmod +x ./terraform
 
-FROM ubuntu:focal
+FROM ubuntu:20.04
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
          git \
