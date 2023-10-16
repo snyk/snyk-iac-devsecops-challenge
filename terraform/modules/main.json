@@ -1,0 +1,10 @@
+{
+  "data": {},
+  "resource": {},
+  "module": {
+    "validate_ip": {
+      "source": "github.com/p15r/terraform-validate-ip",
+      "ip_addr": "10.0.1.132"
+    }
+  }
+}
