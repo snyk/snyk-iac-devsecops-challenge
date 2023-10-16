@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: aws-cloud-config-lab
+spec:
+  type: intentionally-vulnerable
+  lifecycle: "-"
+  owner: cloud-security
