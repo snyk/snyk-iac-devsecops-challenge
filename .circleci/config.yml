@@ -1,10 +1,18 @@
 version: 2.1
 
 orbs:
-  prodsec: snyk/prodsec-orb@1.0
+  prodsec: snyk/prodsec-orb@1
+
+jobs:
+  security_scans:
+    docker:
+      - image: cimg/base:2020.01
+    steps:
+      - checkout
+      - prodsec/security_scans:
+          mode: auto
 
 workflows:
-  version: 2
   CICD:
     jobs:
       - prodsec/secrets-scan:
@@ -12,3 +20,7 @@ workflows:
           context:
             - snyk-bot-slack
           channel: ask-content
+      - security_scans:
+          name: Security Scans
+          context:
+            - analysis_intelligence-tooling
