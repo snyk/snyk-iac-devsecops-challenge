@@ -23,4 +23,4 @@ workflows:
       - security_scans:
           name: Security Scans
           context:
-            - analysis_intelligence-tooling
+            - analysis_rules-intelligence
